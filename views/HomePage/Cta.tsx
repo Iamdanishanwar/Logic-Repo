@@ -14,10 +14,9 @@ export default function Cta() {
       <Container>
         <Stack>
           <OverTitle>Lorem ipsum dolor sit amet</OverTitle>
-          <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</SectionTitle>
+          <SectionTitle>Touch sky with Logic Repository!</SectionTitle>
           <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae accusamus deleniti nihil quas tempora numquam, vitae
-            culpa.
+            Connect with us, share your thoughts, and embark on this exciting journey of continuous learning and innovation. Together, we'll build a brighter future.
           </Description>
           <ButtonGroup>
             <NextLink href="#early-access" passHref>

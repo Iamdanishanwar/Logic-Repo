@@ -14,7 +14,7 @@ export default function Header({ title, formattedDate, imageUrl, readTime }: Hea
   return (
     <HeaderContainer>
       <ArticleImage src={imageUrl} />
-      <Title>{title}</Title>
+      <Title>Logic Repository</Title>
       <DetailsContainer>
         {formattedDate} <MidDot /> {readTime}
       </DetailsContainer>

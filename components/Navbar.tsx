@@ -69,8 +69,9 @@ export default function Navbar({ items }: NavbarProps) {
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            <Logo />
-          </LogoWrapper>
+            {/* <Logo /> */}
+            <h1>Logic Repository</h1>
+          </LogoWrapper> 
         </NextLink>
         <NavItemList>
           {items.map((singleItem) => (

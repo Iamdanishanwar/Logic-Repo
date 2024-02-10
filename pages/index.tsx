@@ -26,36 +26,29 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
       <HomepageWrapper>
         <WhiteBackgroundContainer>
           <Hero />
+          <DarkerBackgroundContainer>
+            <FeaturesGallery />
+          </DarkerBackgroundContainer>
           <Partners />
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+          <BasicSection imageUrl="/demo-illustration-1.svg" title="Missions" overTitle="sit amet gogo">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
+              Our mission is crystal clear—to be the guiding light for all Salesforce enthusiasts on their learning journey. We strive to create a community that fosters collaboration, knowledge sharing, and growth. Our blogs are carefully crafted to cater to beginners seeking to embark on their Salesforce expedition and seasoned professionals looking to stay at the forefront of the rapidly evolving ecosystem.{' '}
             </p>
           </BasicSection>
-          <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
+          <BasicSection imageUrl="/demo-illustration-2.svg" title="Join the Repository:
+." overTitle="lorem ipsum" reversed>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore{' '}
-              <strong>voluptate quo deleniti animi laboriosam</strong>. Possimus ullam velit rem itaque consectetur, in distinctio?
+              <strong>Whether you are a novice or a seasoned pro, Logic Repository is your one-stop destination to gain expertise and stay ahead in the game.</strong>. Our commitment to providing quality content and insights is unwavering. We believe that every success story in the development realm begins with a step in the right direction—a step taken with the right knowledge, tools, and guidance.
             </p>
-            <ul>
-              <li>Professional point 1</li>
-              <li>Professional remark 2</li>
-              <li>Professional feature 3</li>
-            </ul>
           </BasicSection>
         </WhiteBackgroundContainer>
         <DarkerBackgroundContainer>
           <Cta />
-          <FeaturesGallery />
           <Features />
           <Testimonials />
           <ScrollableBlogPosts posts={posts} />
         </DarkerBackgroundContainer>
-      </HomepageWrapper>
+      </HomepageWrapper >
     </>
   );
 }

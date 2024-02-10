@@ -15,10 +15,9 @@ export default function Hero() {
     <HeroWrapper>
       <Contents>
         <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        <Heading>Simpliyfying Technologies</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+          At Logic Repository, we're more than developers; we're storytellers, problem solvers, and advocates for the development community. Our experienced team is dedicated to sharing knowledge, insights, and best practices to empower fellow developers in their journey of growth and innovation.
         </Description>
         <CustomButtonGroup>
           <Button onClick={() => setIsModalOpened(true)}>

@@ -21,16 +21,16 @@ export default function WaveCta() {
       </svg>
       <CtaWrapper>
         <Container>
-          <Title>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</Title>
+          <Title>Schedule a Free Consultation!</Title>
           <CustomButtonGroup>
             <Button onClick={() => setIsModalOpened(true)}>
-              Subscribe to the newsletter <span>&rarr;</span>
+              Book A Consultation <span>&rarr;</span>
             </Button>
-            <NextLink href="/features" passHref>
+            {/* <NextLink href="/features" passHref>
               <OutlinedButton transparent>
                 Features <span>&rarr;</span>
               </OutlinedButton>
-            </NextLink>
+            </NextLink> */}
           </CustomButtonGroup>
         </Container>
       </CtaWrapper>
