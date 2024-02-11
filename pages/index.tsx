@@ -1,4 +1,4 @@
-import { InferGetStaticPropsType } from 'next';
+import { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
@@ -11,13 +11,23 @@ import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
 import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
+import { ICollectionResponse, ICategory, IArticle } from './types';
 import Testimonials from 'views/HomePage/Testimonials';
+import { fetchArticles, fetchCategories } from '../http/index';
 
-export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+interface IPropTypes {
+  categories: {
+    items: ICategory[];
+  };
+  articles: {
+    items: IArticle[];
+  }
+}
+export default function Homepage({ articles }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <Head>
-        <title>{EnvVars.SITE_NAME}</title>
+        <title>Logicrepository</title>
         <meta
           name="description"
           content="Tempor nostrud velit fugiat nostrud duis incididunt Lorem deserunt est tempor aute dolor ad elit."
@@ -46,7 +56,7 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <Cta />
           <Features />
           <Testimonials />
-          <ScrollableBlogPosts posts={posts} />
+          <ScrollableBlogPosts articles={articles.items} />
         </DarkerBackgroundContainer>
       </HomepageWrapper >
     </>
@@ -79,10 +89,29 @@ const WhiteBackgroundContainer = styled.div`
   }
 `;
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   return {
+//     props: {
+//       posts: await getAllPosts(),
+//     },
+//   };
+// }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  // categories
+  const { data: articles }: AxiosResponse<ICollectionResponse<IArticle[]>> = await fetchArticles();
+  const { data: categories }: AxiosResponse<ICollectionResponse<ICategory[]>> = await fetchCategories();
+  console.log("Categories", categories);
+  console.log("Articles", articles);
   return {
     props: {
-      posts: await getAllPosts(),
-    },
-  };
+      categories: {
+        items: categories.data
+      },
+      articles: {
+        items: articles.data,
+        pagination: articles.meta.pagination,
+      }
+    }
+  }
 }

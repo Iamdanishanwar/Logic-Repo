@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Providers>
         <Modals />
         <Navbar items={navItems} />
-        <TinaEditProvider
+        {/* <TinaEditProvider
           editMode={
             <TinaCMS
               query={pageProps.query}
@@ -65,9 +65,9 @@ function MyApp({ Component, pageProps }: AppProps) {
               {(livePageProps: any) => <Component {...livePageProps} />}
             </TinaCMS>
           }
-        >
+        > */}
           <Component {...pageProps} />
-        </TinaEditProvider>
+        {/* </TinaEditProvider> */}
         <WaveCta />
         <Footer />
       </Providers>
